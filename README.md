@@ -65,7 +65,7 @@ in the repository. The following files and directories have been added:
     bundle resources (properties, stylesheet, images, ...).
   - [`branding/bundle/bundle.properties`](reflector/branding/bundle/bundle.properties):
     configuration properties, as well as text for the user interface
-  - [`branding/bundle/css/custom-styles.css`](reflector/branding/css/custom-styles.css):
+  - [`branding/bundle/css/customstyles.css`](reflector/branding/css/customstyles.css):
     custom stylesheet for web user interface
   - [`branding/bundle/images/custom-logo.png`](reflector/branding/images/custom-logo.png):
     custom logo (references from custom-styles.css)
