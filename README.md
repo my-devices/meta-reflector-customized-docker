@@ -61,7 +61,7 @@ The key point is to create an extension bundle containing the necessary resource
 and meta-data. Unlike the example in the manual, which creates the extension bundle
 manually using a Zip utility, with Docker, the bundle can be created with the
 *BundleCreator* utility (`bundle`) included in the Docker image. To do so, the
-`Dockerfile` must be extended to copy the bundle sources into the build image
+[`Dockerfile`](reflector/Dockerfile) must be extended to copy the bundle sources into the build image
 and run the `bundle` utility to create the bundle and copy it to the
 `/home/reflector/lib/bundles` directory, where it will be picked up by
 the server.
