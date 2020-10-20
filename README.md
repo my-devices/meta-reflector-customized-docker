@@ -31,10 +31,21 @@ the web user interface of macchina.io Remote Manager server deployed in a Docker
 container.
 
 
+## Prerequisites
+
+You should already be familiar with setting up a Docker container for the macchina.io
+Remote Manager server, as described in the following repositories:
+
+  - https://github.com/my-devices/meta-reflector-docker
+  - https://github.com/my-devices/meta-reflector-aws
+  
+The changes described in this repository must be applied to one
+of the above repositories.
+
 ## Customizing the Web User Interface
 
 The web user interface of macchina.io Remote Manager server can be customized
-by providing a so-called extension bundle, which can:
+by providing a so-called *extension bundle*, which will:
 
   - provide a custom stylesheet
   - provide a custom logo
@@ -49,8 +60,8 @@ for detailed information about customizing the web user interface.
 The key point is to create an extension bundle containing the necessary resources
 and meta-data. Unlike the example in the manual, which creates the extension bundle
 manually using a Zip utility, with Docker, the bundle can be created with the
-*BundleCreator* utility included in the Docker image. To do so, the
-`Dockerfile` must be extended to copy the bundle sources into the image
+*BundleCreator* utility (`bundle`) included in the Docker image. To do so, the
+`Dockerfile` must be extended to copy the bundle sources into the build image
 and run the `bundle` utility to create the bundle and copy it to the
 `/home/reflector/lib/bundles` directory, where it will be picked up by
 the server.
@@ -64,11 +75,13 @@ in the repository. The following files and directories have been added:
   - [`branding/bundle`](reflector/branding/bundle): directory containing the
     bundle resources (properties, stylesheet, images, ...).
   - [`branding/bundle/bundle.properties`](reflector/branding/bundle/bundle.properties):
-    configuration properties, as well as text for the user interface
+    configuration properties, as well as text for the user interface. This can be
+    changed as desired.
   - [`branding/bundle/css/customstyles.css`](reflector/branding/bundle/css/customstyles.css):
-    custom stylesheet for web user interface
+    custom stylesheet for web user interface. This can be changed as desired.
   - [`branding/bundle/images/custom-logo.png`](reflector/branding/bundle/images/custom-logo.png):
-    custom logo (references from `customstyles.css`)
+    custom logo (references from `customstyles.css`). This can be replaced with your
+    own logo.
 
 In addition, two commands have been added to the [`Dockerfile`](reflector/Dockerfile):
 
