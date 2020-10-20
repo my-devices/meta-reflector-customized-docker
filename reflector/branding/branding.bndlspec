@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<bundlespec>
+  <manifest>
+    <name>Sample custom for macchina.io Remote Manager</name>
+    <symbolicName>net.my-devices.reflector.custom-branding</symbolicName>
+    <version>1.0.0</version>
+    <vendor>Applied Informatics</vendor>
+    <copyright>(c) 2019-2020, Applied Informatics Software Engineering GmbH</copyright>
+    <lazyStart>false</lazyStart>
+    <runLevel>400</runLevel>
+    <extends>net.my-devices.reflector</extends>
+  </manifest>
+  <code>
+  </code>
+  <files>
+    bundle/*
+  </files>
+</bundlespec>
