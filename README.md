@@ -58,15 +58,26 @@ the server.
 The sources for the bundle have been added to the [`reflector`](reflector) directory
 in the repository. The following files and directories have been added:
 
-  - `[branding](reflector/branding)`: directory containing all resources
-  - `[branding/branding.bndlspec](reflector/branding/branding.bndlspec)`: An XML file
+  - [`branding`](reflector/branding): directory containing all resources
+  - [`branding/branding.bndlspec`](reflector/branding/branding.bndlspec): An XML file
     containing bundle metadata. The file can be left as is.
-  - `[branding/bundle](reflector/branding/bundle)`: directory containing the
+  - [`branding/bundle`](reflector/branding/bundle): directory containing the
     bundle resources (properties, stylesheet, images, ...).
-  - `[branding/bundle/bundle.properties](reflector/branding/bundle/bundle.properties)`:
+  - [`branding/bundle/bundle.properties`](reflector/branding/bundle/bundle.properties):
     configuration properties, as well as text for the user interface
-  - `[branding/bundle/css/custom-styles.css](reflector/branding/css/custom-styles.css)`:
+  - [`branding/bundle/css/custom-styles.css`](reflector/branding/css/custom-styles.css):
     custom stylesheet for web user interface
-  - `[branding/bundle/images/custom-logo.png](reflector/branding/images/custom-logo.png)`:
+  - [`branding/bundle/images/custom-logo.png`](reflector/branding/images/custom-logo.png):
     custom logo (references from custom-styles.css)
 
+In addition, two commands have been added to the [`Dockerfile`](reflector/Dockerfile):
+
+```
+COPY branding /home/reflector/branding
+RUN cd /home/reflector/branding && bundle -o/home/reflector/lib/bundles branding.bndlspec
+```
+
+The first command copies the extension bundle sources to the Docker image, and the
+second command runs the `bundle` command to generate a bundle file 
+(`net.my-devices.reflector.custom-branding.bndl`) in the `/home/reflector/lib/bundles`
+directory.
