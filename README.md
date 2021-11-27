@@ -1,25 +1,25 @@
-# macchina.io Remote Manager - Customize Web User Interface
+# macchina.io REMOTE - Customize Web User Interface
 
-## About macchina.io Remote Manager
+## About macchina.io REMOTE
 
-[macchina.io Remote Manager](https://macchina.io) provides secure remote access to connected devices
+[macchina.io REMOTE](https://macchina.io/remote) provides secure remote access to connected devices
 via HTTP or other TCP-based protocols and applications such as secure shell (SSH) or
-Virtual Network Computing (VNC). With macchina.io Remote Manager, any network-connected device
-running the Remote Manager Agent software (*WebTunnelAgent*)
+Virtual Network Computing (VNC). With macchina.io REMOTE, any network-connected device
+running the macchina.io REMOTE Device Agent software (*WebTunnelAgent*)
 can be securely accessed remotely over the internet from browsers, mobile apps, desktop,
 server or cloud applications.
 
 This even works if the device is behind a NAT router, firewall or proxy server.
 The device becomes just another host on the internet, addressable via its own URL and
-protected by the Remote Manager server against unauthorized or malicious access.
-macchina.io Remote Manager is a great solution for secure remote support and maintenance,
+protected by the macchina.io REMOTE server against unauthorized or malicious access.
+macchina.io REMOTE is a great solution for secure remote support and maintenance,
 as well as for providing secure remote access to devices for end-users via web or
 mobile apps.
 
-Visit [macchina.io](https://macchina.io/remote.html) to learn more and to register for a free account.
+Visit [macchina.io/remote](https://macchina.io/remote) to learn more and to register for a free account.
 Specifically, see the [Getting Started](https://macchina.io/remote_signup.html) page and the
 [Frequently Asked Questions](https://macchina.io/remote_faq.html) for
-information on how to use the macchina.io Remote Manager device agent.
+information on how to use the macchina.io REMOTE device agent.
 
 There is also a [blog post](https://macchina.io/blog/?p=257) showing step-by-step instructions to connect a Raspberry Pi.
 
@@ -27,24 +27,24 @@ There is also a [blog post](https://macchina.io/blog/?p=257) showing step-by-ste
 ## About This Repository
 
 This repository contains a documentation and sample configuration files to customize
-the web user interface of macchina.io Remote Manager server deployed in a Docker
+the web user interface of macchina.io REMOTE server deployed in a Docker
 container.
 
 
 ## Prerequisites
 
 You should already be familiar with setting up a Docker container for the macchina.io
-Remote Manager server, as described in the following repositories:
+REMOTE server, as described in the following repositories:
 
   - https://github.com/my-devices/meta-reflector-docker
   - https://github.com/my-devices/meta-reflector-aws
-  
+
 The changes described in this repository must be applied to one
 of the above repositories.
 
 ## Customizing the Web User Interface
 
-The web user interface of macchina.io Remote Manager server can be customized
+The web user interface of macchina.io REMOTE server can be customized
 by providing a so-called *extension bundle*, which will:
 
   - provide a custom stylesheet
@@ -53,7 +53,7 @@ by providing a so-called *extension bundle*, which will:
     overriding default configuration settings
   - provide user interface text in a different language
 
-Please see the macchina.io Remote Manager Server Set-Up and Administration Guide,
+Please see the macchina.io REMOTE Server Set-Up and Administration Guide,
 section 5.7.4 - Changing the Style and Branding of the Default Web User Interface,
 for detailed information about customizing the web user interface.
 
@@ -91,6 +91,6 @@ RUN cd /home/reflector/branding && bundle -o/home/reflector/lib/bundles branding
 ```
 
 The first command copies the extension bundle sources to the Docker image, and the
-second command runs the `bundle` command to generate a bundle file 
+second command runs the `bundle` command to generate a bundle file
 (`net.my-devices.reflector.custom-branding.bndl`) in the `/home/reflector/lib/bundles`
 directory.
